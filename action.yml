@@ -1,0 +1,35 @@
+name: "Combine Dependabot PRs"
+description: "Combines the Dependabot PRs into a single PR to simplify dependency updates"
+inputs:
+  branchPrefix:
+    description: "Branch prefix to find combinable PRs based on"
+    required: true
+    default: "dependabot"
+  mustBeGreen:
+    description: "Only combine PRs that are green (status is success)"
+    required: true
+    default: true
+  combineBranchName:
+    description: "Name of the branch to combine PRs into"
+    required: true
+    default: "combined-prs"
+  ignoreLabel:
+    description: "Exclude PRs with this label"
+    required: true
+    default: "nocombine"
+  baseBranch:
+    description: "Branch to PR into"
+    required: true
+    default: "main"
+  githubToken:
+    description: "The GitHub token used to create an authenticated client"
+    default: ${{ github.token }}
+    required: true
+  openPR:
+    description: "Whether to open a PR with the created branch"
+    default: true
+    required: true
+runs:
+  pre: "pre-action.js"
+  using: "node12"
+  main: "action.js"

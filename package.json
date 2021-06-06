@@ -1,0 +1,22 @@
+{
+  "name": "combine-dependabot-prs",
+  "version": "1.0.0",
+  "description": "GitHub action to combine dependabot PRs",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.3.0",
+    "@actions/github": "^5.0.0",
+    "@actions/io": "^1.1.0",
+    "execa": "^5.1.1",
+    "replace-in-file": "^6.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.1"
+  }
+}
