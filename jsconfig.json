@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "checkJs": true,
+    "lib": ["dom", "es2015", "es2016", "es2017", "es2018", "es2019", "es2020"],
+    "allowSyntheticDefaultImports": true,
+    "module": "commonjs",
+    "jsx": "react-jsx"
+  },
+  "exclude": ["node_modules"]
+}
