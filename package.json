@@ -1,8 +1,9 @@
 {
   "name": "combine-dependabot-prs",
   "version": "1.0.0",
-  "description": "GitHub action to combine dependabot PRs",
+  "description": "Combine multiple Dependabot PRs into a single PR to simplify dependency updates",
   "main": "lib/index.js",
+  "bin": "./bin/cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +15,12 @@
     "@actions/github": "^5.0.0",
     "@actions/io": "^1.1.0",
     "execa": "^5.1.1",
-    "replace-in-file": "^6.2.0"
+    "inquirer": "^8.1.0",
+    "log-symbols": "^4.1.0",
+    "meow": "^9.0.0",
+    "replace-in-file": "^6.2.0",
+    "rimraf": "^3.0.2",
+    "terminal-link": "^2.0.0"
   },
   "devDependencies": {
     "prettier": "^2.3.1"
