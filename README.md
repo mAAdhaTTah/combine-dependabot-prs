@@ -16,15 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.3
-      - uses: maadhattah/combine-dependabot-prs
+      - uses: maadhattah/combine-dependabot-prs@main
         with:
           branchPrefix: "dependabot"
           mustBeGreen: true
           combineBranchName: "combined-prs"
-          baseBranch: "main"
           ignoreLabel: "nocombine"
           baseBranch: "main"
-          githubToken: ${{ github.token }}
           openPR: true
 ```
 

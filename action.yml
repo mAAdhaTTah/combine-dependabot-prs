@@ -1,5 +1,5 @@
 name: "Combine Dependabot PRs"
-description: "Combines the Dependabot PRs into a single PR to simplify dependency updates"
+description: "Combine multiple Dependabot PRs into a single PR to simplify dependency updates"
 inputs:
   branchPrefix:
     description: "Branch prefix to find combinable PRs based on"
