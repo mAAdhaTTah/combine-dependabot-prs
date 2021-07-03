@@ -27,6 +27,11 @@ const cli = meow(
 	  --branch-prefix        Branch prefix to find combinable PRs based on
 	  --include-failed       Include PRs whose status checks have failed
 	  --combine-branch-name  Name of the branch to combine PRs into
+	  --ignore-label         PR's with this label will not be combined
+	                         Defaults to "nocombine"
+	  --base-branch          Base branch to branch from & PR into
+	                         Defaults to "main"
+	  --skip-pr              If present, will skip creating a new PR for the new branch
 
 	Examples
 	  $ combine-dependabot-prs mAAdhaTTah/memezer
@@ -57,9 +62,9 @@ const cli = meow(
         type: "string",
         default: "main",
       },
-      openPr: {
+      skipPr: {
         type: "boolean",
-        default: true,
+        default: false,
       },
     },
   }
@@ -97,7 +102,7 @@ const TARGET_STRING_RE = /^([\w-_]+)\/([\w-_]+)$/;
     ignoreLabel,
     combineBranchName,
     baseBranch,
-    openPr: openPR,
+    skipPr,
   } = cli.flags;
   let { githubToken } = cli.flags;
 
@@ -159,7 +164,7 @@ const TARGET_STRING_RE = /^([\w-_]+)\/([\w-_]+)$/;
           ignoreLabel,
           combineBranchName,
           baseBranch,
-          openPR,
+          openPR: !skipPr,
         }
       );
 
