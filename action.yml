@@ -1,5 +1,7 @@
 name: "Combine Dependabot PRs"
 description: "Combine multiple Dependabot PRs into a single PR to simplify dependency updates"
+icon: "git-merge"
+color: "blue"
 inputs:
   branchPrefix:
     description: "Branch prefix to find combinable PRs based on"
