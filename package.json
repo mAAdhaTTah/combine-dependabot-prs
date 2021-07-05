@@ -1,6 +1,6 @@
 {
   "name": "combine-dependabot-prs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Combine multiple Dependabot PRs into a single PR to simplify dependency updates",
   "main": "lib/index.js",
   "bin": "./bin/cli.js",
