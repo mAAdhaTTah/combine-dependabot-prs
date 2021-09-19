@@ -138,6 +138,11 @@ const TARGET_STRING_RE = /^([\w-_]+)\/([\w-_]+)$/;
   };
   process.on("SIGINT", cleanup);
 
+  if (cli.input.length === 0) {
+    logger.error(`No targets provided. Use --help flag for more info.`);
+    return;
+  }
+
   try {
     for (const targetString of cli.input) {
       const match = TARGET_STRING_RE.exec(targetString);
