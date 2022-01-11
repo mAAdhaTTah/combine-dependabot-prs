@@ -49,6 +49,7 @@ jobs:
           ignoreLabel: "nocombine"
           baseBranch: "main"
           openPR: true
+          allowSkipped: false
 ```
 
 These are the defaults, and any or all can be customized or omitted.
