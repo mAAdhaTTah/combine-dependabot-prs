@@ -32,6 +32,10 @@ inputs:
     description: "Whether to open a PR with the created branch"
     default: true
     required: true
+  allowSkipped:
+    description: "Whether to treat skipped checks as successful"
+    default: false
+    required: false
 runs:
   using: "node12"
   pre: "action/pre.js"

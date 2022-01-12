@@ -23,6 +23,7 @@ const main = async () => {
   });
   const baseBranch = core.getInput("baseBranch", { required: true });
   const openPR = core.getBooleanInput("openPR", { required: true });
+  const allowSkipped = core.getBooleanInput("allowSkipped", { required: true });
   const github = getOctokit(githubToken);
 
   await execa("git", ["config", "user.name", "github-actions"]);
