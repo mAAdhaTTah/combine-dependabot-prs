@@ -34,8 +34,6 @@ const cli = meow(
     --allow-skipped        Allow skipped checks to be considered succesfull
 	  --skip-pr              If present, will skip creating a new PR for the new branch
 
-    
-
 	Examples
 	  $ combine-dependabot-prs mAAdhaTTah/memezer
 	  $ combine-dependabot-prs mAAdhaTTah/memezer mAAdhaTTah/brookjs
