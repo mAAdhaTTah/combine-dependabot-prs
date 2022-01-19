@@ -31,7 +31,7 @@ const cli = meow(
 	                         Defaults to "nocombine"
 	  --base-branch          Base branch to branch from & PR into
 	                         Defaults to "main"
-    --allow-skipped        Allow skipped checks to be considered succesfull
+    --allow-skipped        Allow skipped checks to be considered succesful
 	  --skip-pr              If present, will skip creating a new PR for the new branch
 
 	Examples
