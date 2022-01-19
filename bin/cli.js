@@ -31,6 +31,7 @@ const cli = meow(
 	                         Defaults to "nocombine"
 	  --base-branch          Base branch to branch from & PR into
 	                         Defaults to "main"
+    --allow-skipped        Allow skipped checks to be considered succesful
 	  --skip-pr              If present, will skip creating a new PR for the new branch
 
 	Examples
@@ -63,6 +64,10 @@ const cli = meow(
         default: "main",
       },
       skipPr: {
+        type: "boolean",
+        default: false,
+      },
+      allowSkipped: {
         type: "boolean",
         default: false,
       },
@@ -103,6 +108,7 @@ const TARGET_STRING_RE = /^([\w-_]+)\/([\w-_]+)$/;
     combineBranchName,
     baseBranch,
     skipPr,
+    allowSkipped,
   } = cli.flags;
   let { githubToken } = cli.flags;
 
@@ -165,6 +171,7 @@ const TARGET_STRING_RE = /^([\w-_]+)\/([\w-_]+)$/;
         { github, logger, target },
         {
           mustBeGreen: !includeFailed,
+          allowSkipped,
           branchPrefix,
           ignoreLabel,
           combineBranchName,
