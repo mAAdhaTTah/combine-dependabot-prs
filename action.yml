@@ -16,6 +16,10 @@ inputs:
     description: "Name of the branch to combine PRs into"
     required: true
     default: "combined-prs"
+  includeLabel:
+    description: "Only include PRs with this label"
+    required: false
+    default: ""
   ignoreLabel:
     description: "Exclude PRs with this label"
     required: true
