@@ -17,6 +17,7 @@ const main = async () => {
   const githubToken = core.getInput("githubToken", { required: true });
   const mustBeGreen = core.getBooleanInput("mustBeGreen", { required: true });
   const branchPrefix = core.getInput("branchPrefix", { required: true });
+  const includeLabel = core.getInput("includeLabel", { required: false });
   const ignoreLabel = core.getInput("ignoreLabel", { required: true });
   const combineBranchName = core.getInput("combineBranchName", {
     required: true,
@@ -55,6 +56,7 @@ const main = async () => {
       mustBeGreen,
       allowSkipped,
       branchPrefix,
+      includeLabel,
       ignoreLabel,
       combineBranchName,
       baseBranch,

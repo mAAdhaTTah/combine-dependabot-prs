@@ -46,6 +46,7 @@ jobs:
           branchPrefix: "dependabot"
           mustBeGreen: true
           combineBranchName: "combined-prs"
+          includeLabel: ""
           ignoreLabel: "nocombine"
           baseBranch: "main"
           openPR: true
