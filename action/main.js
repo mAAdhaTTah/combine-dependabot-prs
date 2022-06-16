@@ -25,6 +25,7 @@ const main = async () => {
   const baseBranch = core.getInput("baseBranch", { required: true });
   const openPR = core.getBooleanInput("openPR", { required: true });
   const allowSkipped = core.getBooleanInput("allowSkipped", { required: false });
+  const closeOnceCombined = core.getBooleanInput("closeOnceCombined", { required: false });
   const github = getOctokit(githubToken);
 
   await execa("git", ["config", "user.name", "github-actions"]);
@@ -61,6 +62,7 @@ const main = async () => {
       combineBranchName,
       baseBranch,
       openPR,
+      closeOnceCombined,
     }
   );
 };

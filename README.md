@@ -51,6 +51,7 @@ jobs:
           baseBranch: "main"
           openPR: true
           allowSkipped: false
+          closeOnceCombined: false
 ```
 
 These are the defaults, and any or all can be customized or omitted.

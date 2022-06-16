@@ -40,6 +40,10 @@ inputs:
     description: "Whether to treat skipped checks as successful"
     default: false
     required: false
+  closeOnceCombined:
+    description: "Whether to close dependabot PRs once they have been combined"
+    default: false
+    required: false
 runs:
   using: "node12"
   pre: "action/pre.js"

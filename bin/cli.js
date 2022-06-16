@@ -35,6 +35,7 @@ const cli = meow(
 	                         Defaults to "main"
     --allow-skipped        Allow skipped checks to be considered succesful
 	  --skip-pr              If present, will skip creating a new PR for the new branch
+    --close-once-combined  If present, will close the individual dependabot PRs/branchs once combined
 
 	Examples
 	  $ combine-dependabot-prs mAAdhaTTah/memezer
@@ -77,6 +78,10 @@ const cli = meow(
         type: "boolean",
         default: false,
       },
+      closeOnceCombined: {
+        type: "boolean",
+        default: false,
+      },
     },
   }
 );
@@ -116,6 +121,7 @@ const TARGET_STRING_RE = /^([\w-_]+)\/([\w-_]+)$/;
     baseBranch,
     skipPr,
     allowSkipped,
+    closeOnceCombined,
   } = cli.flags;
   let { githubToken } = cli.flags;
 
@@ -185,6 +191,7 @@ const TARGET_STRING_RE = /^([\w-_]+)\/([\w-_]+)$/;
           combineBranchName,
           baseBranch,
           openPR: !skipPr,
+          closeOnceCombined,
         }
       );
 
